@@ -1,0 +1,15 @@
+spring:
+  batch:
+    job:
+      enabled: false
+    initialize-schema: always
+
+  datasource-nwis:
+    url: jdbc:postgresql://${NWIS_DATABASE_ADDRESS}:${NWIS_DATABASE_PORT}/${NWIS_DATABASE_NAME}
+    username: ${NWIS_SCHEMA_OWNER_USERNAME}
+    password: ${NWIS_SCHEMA_OWNER_PASSWORD}
+
+  datasource-nwqdatachecks:
+    url: jdbc:oracle:thin:@//${NWQ_DATA_CHECKS_DATABASE_ADDRESS}:${NWQ_DATA_CHECKS_DATABASE_PORT}/${NWQ_DATA_CHECKS_DATABASE_NAME}
+    username: ${NWQ_DATA_CHECKS_USERNAME}
+    password: ${NWQ_DATA_CHECKS_PASSWORD}
