@@ -19,7 +19,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("!test & !it")
 public class JobCommandLineRunner implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(JobCommandLineRunner.class);

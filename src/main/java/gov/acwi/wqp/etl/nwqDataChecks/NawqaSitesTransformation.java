@@ -47,7 +47,7 @@ public class NawqaSitesTransformation {
     public Step transformNawqaSitesStep() {
         return stepBuilderFactory
                 .get("transformNawqaSitesStep")
-                .<NawqaSites, NawqaSites> chunk(100)
+                .<NawqaSites, NawqaSites> chunk(1000)
                 .reader(nawqaSitesReader)
                 .processor(nawqaSitesProcessor)
                 .writer(nawqaSitesWriter)

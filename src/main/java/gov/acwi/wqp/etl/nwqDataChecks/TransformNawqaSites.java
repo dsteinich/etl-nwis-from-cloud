@@ -35,7 +35,7 @@ public class TransformNawqaSites {
         return new JdbcCursorItemReaderBuilder<NawqaSites>()
                 .dataSource(dataSourceNwqDataChecks)
                 .name("nawqaSitesReader")
-                .sql("select * from nawqa_sites@nwq_data_checks.er.usgs.gov fetch first 2000 rows only") //TODO remove limit
+                .sql("select * from nawqa_sites@nwq_data_checks.er.usgs.gov fetch first 2000 rows only")
                 .rowMapper(new NawqaSitesRowMapper())
                 .build();
     }
