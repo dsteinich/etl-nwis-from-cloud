@@ -8,7 +8,7 @@ schema where the source of the information is from CHS sources. Currently this i
 In order to run locally, you will need connection information to the NatDB database. For the WQP NWIS schema, you can use the docker commands in schema-nwis-ws-star to spin up a local postgres database.
 
 You will need to create an application.yml file containing the following:
-```
+```yaml
 NWIS_DATABASE_ADDRESS: <url to database>
 NWIS_DATABASE_PORT: <port # of nwis database>
 NWIS_DTABASE_NAME: <wqp_db>
