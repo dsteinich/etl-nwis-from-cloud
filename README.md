@@ -1,6 +1,8 @@
 # etl-nwis-from-cloud
 WQP ETL from sources in the cloud into the nwis schema
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a2f49e368a69454a92a326b3e649f18e)](https://www.codacy.com/app/usgs_wma_dev/etl-nwis-from-cloud?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NWQMC/etl-nwis-from-cloud&amp;utm_campaign=Badge_Grade)
+
 This repo contains a spring batch application which runs the ETL for the WQP NWIS
 schema where the source of the information is from CHS sources. Currently this includes nwq_data_checks
 
