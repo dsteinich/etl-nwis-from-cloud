@@ -1,4 +1,4 @@
-ROM maven:3.6.0-jdk-11 AS build
+FROM maven:3.6.0-jdk-11 AS build
 LABEL maintainer="gs-w_eto_eb_federal_employees@usgs.gov"
 
 # Add pom.xml and install dependencies
