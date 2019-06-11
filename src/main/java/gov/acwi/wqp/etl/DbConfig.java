@@ -42,4 +42,15 @@ public class DbConfig {
     public DataSource dataSourceNwqDataChecks() {
         return dataSourcePropertiesNwqDataChecks().initializeDataSourceBuilder().build();
     }
+
+    @Bean
+    @ConfigurationProperties(prefix="spring.datasource-natdb")
+    public DataSourceProperties dataSourcePropertiesNatdb() {
+        return new DataSourceProperties();
+    }
+
+    @Bean
+    public DataSource dataSourceNatdb() {
+        return dataSourcePropertiesNatdb().initializeDataSourceBuilder().build();
+    }
 }

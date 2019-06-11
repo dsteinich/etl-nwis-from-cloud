@@ -20,10 +20,15 @@ public class BatchConfiguration {
     @Qualifier("nawqaSitesFlow")
     private Flow nawqaSitesFlow;
 
+    @Autowired
+    @Qualifier("natdbFlow")
+    private Flow natdbFlow;
+
     @Bean
     public Job nwisFromCloudEtl() {
         return jobBuilderFactory.get("WQP_NWIS_FROM_CLOUD_ETL")
                 .start(nawqaSitesFlow)
+                .next(natdbFlow)
                 .build()
                 .build();
     }

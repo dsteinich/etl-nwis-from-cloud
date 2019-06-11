@@ -24,7 +24,7 @@ public class TransformNawqaSites {
     private DataSource dataSourceNwqDataChecks;
 
     @Autowired
-    @Qualifier(Application.DATASOURCE_NWIS_QUALIFIER)
+    @Qualifier(Application.Application.DATASOURCE_NWIS_QUALIFIER)
     private DataSource dataSourceNwis;
 
     @Autowired
