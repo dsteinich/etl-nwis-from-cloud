@@ -16,5 +16,5 @@ spring:
 
   datasource-natdb:
     url: jdbc:oracle:thin:@//${NATDB_ADDRESS}:${NATDB_PORT}/${NATDB_NAME}
-      username: ${NATDB_USERNAME}
-      password: ${NATDB_PASSWORD}
+    username: ${NATDB_USERNAME}
+    password: ${NATDB_PASSWORD}

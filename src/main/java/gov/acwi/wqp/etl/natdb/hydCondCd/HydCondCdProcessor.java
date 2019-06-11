@@ -2,7 +2,7 @@ package gov.acwi.wqp.etl.natdb.hydCondCd;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
 
 public class HydCondCdProcessor extends BaseProcessor implements ItemProcessor<HydCondCd, HydCondCd> {
 

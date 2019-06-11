@@ -2,7 +2,8 @@ package gov.acwi.wqp.etl.natdb.siteTp;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
+
 
 public class SiteTpProcessor extends BaseProcessor implements ItemProcessor<SiteTp, SiteTp> {
 

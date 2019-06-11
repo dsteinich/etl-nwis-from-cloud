@@ -24,7 +24,7 @@ public class TransformNawqaSites {
     private DataSource dataSourceNwqDataChecks;
 
     @Autowired
-    @Qualifier(Application.Application.DATASOURCE_NWIS_QUALIFIER)
+    @Qualifier(Application.DATASOURCE_NWIS_QUALIFIER)
     private DataSource dataSourceNwis;
 
     @Autowired
@@ -35,7 +35,7 @@ public class TransformNawqaSites {
         return new JdbcCursorItemReaderBuilder<NawqaSites>()
                 .dataSource(dataSourceNwqDataChecks)
                 .name("nawqaSitesReader")
-                .sql("select * from nawqa_sites@nwq_data_checks.er.usgs.gov fetch first 2000 rows only")
+                .sql("select * from nawqa_sites@nwq_data_checks.er.usgs.gov")
                 .rowMapper(new NawqaSitesRowMapper())
                 .build();
     }

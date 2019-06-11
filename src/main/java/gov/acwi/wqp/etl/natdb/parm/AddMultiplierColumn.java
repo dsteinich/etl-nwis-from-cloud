@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import gov.acwi.wqp.etl.Application;
+
 @Component
 public class AddMultiplierColumn implements Tasklet {
 	

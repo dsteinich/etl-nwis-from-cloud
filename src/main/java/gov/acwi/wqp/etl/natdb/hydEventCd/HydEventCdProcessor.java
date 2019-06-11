@@ -2,7 +2,8 @@ package gov.acwi.wqp.etl.natdb.hydEventCd;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
+
 
 public class HydEventCdProcessor extends BaseProcessor implements ItemProcessor<HydEventCd, HydEventCd> {
 

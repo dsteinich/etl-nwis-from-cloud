@@ -2,7 +2,8 @@ package gov.acwi.wqp.etl.natdb.parmMeth;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
+
 
 public class ParmMethProcessor extends BaseProcessor implements ItemProcessor<ParmMeth, ParmMeth> {
 

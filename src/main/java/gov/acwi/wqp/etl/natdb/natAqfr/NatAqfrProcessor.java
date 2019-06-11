@@ -2,7 +2,7 @@ package gov.acwi.wqp.etl.natdb.natAqfr;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
 
 public class NatAqfrProcessor extends BaseProcessor implements ItemProcessor<NatAqfr, NatAqfr> {
 

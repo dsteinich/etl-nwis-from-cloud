@@ -2,7 +2,7 @@ package gov.acwi.wqp.etl.natdb.country;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
 
 public class CountryProcessor extends BaseProcessor implements ItemProcessor<Country, Country> {
 

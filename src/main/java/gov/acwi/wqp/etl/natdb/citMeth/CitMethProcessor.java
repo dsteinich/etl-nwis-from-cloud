@@ -2,7 +2,7 @@ package gov.acwi.wqp.etl.natdb.citMeth;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.acwi.wqp.etl.natdb.BaseProccesor;
+import gov.acwi.wqp.etl.natdb.BaseProcessor;
 
 public class CitMethProcessor extends BaseProcessor implements ItemProcessor<CitMeth, CitMeth> {
 
