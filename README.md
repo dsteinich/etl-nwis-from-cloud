@@ -33,4 +33,4 @@ NATDB_PASSWORD: <changeMe>
 You can then run the ETL with the following:
 ```% mvn spring-boot:run```
 
-The project is currently set up to run the job every time the command is launched.
+The project is currently set up to run the job once a day.
