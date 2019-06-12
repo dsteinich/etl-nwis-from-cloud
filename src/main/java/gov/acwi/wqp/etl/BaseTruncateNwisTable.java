@@ -9,7 +9,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 
-public abstract class BaseDeleteNwisTable implements Tasklet {
+public abstract class BaseTruncateNwisTable implements Tasklet {
 
     private final JdbcTemplate jdbcTemplate;
     private String tableName;
@@ -18,7 +18,7 @@ public abstract class BaseDeleteNwisTable implements Tasklet {
     private static final String FUNCTION_NAME = "truncate_table";
     private static final String SCHEMA_NAME = "nwis";
 
-    public BaseDeleteNwisTable(JdbcTemplate jdbcTemplate, String tableName) {
+    public BaseTruncateNwisTable(JdbcTemplate jdbcTemplate, String tableName) {
         this.jdbcTemplate = jdbcTemplate;
         this.tableName = tableName;
     }

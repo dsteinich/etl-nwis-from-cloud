@@ -1,0 +1,6 @@
+dockerImageName: "etl-nwis-from-cloud"
+artifactoryPath: "wqp"
+gitlabPath: "wma/docker/wqp"
+gitRepoUrl: "https://github.com/NWQMC/etl-nwis-from-cloud"
+gitRepoCredentialsId: "Jenkins-GitHub-Read-Write-Token"
+

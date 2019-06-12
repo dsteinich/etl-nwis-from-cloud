@@ -1,6 +1,6 @@
 package gov.acwi.wqp.etl;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +32,7 @@ public class JobCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         JobParameters parameters = new JobParametersBuilder(jobExplorer)
-                .addString("jobId", LocalDateTime.now().toString(), true)
+                .addString("jobId", LocalDate.now().toString(), true)
                 .toJobParameters();
         try {
             JobExecution jobExecution = jobLauncher.run(job, parameters);
