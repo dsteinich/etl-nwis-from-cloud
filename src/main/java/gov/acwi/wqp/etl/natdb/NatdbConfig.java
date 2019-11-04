@@ -11,126 +11,151 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class NatdbConfig {
 
-    @Autowired
-    @Qualifier("altitudeMethodFlow")
-    private Flow altitudeMethodFlow;
+	@Autowired
+	@Qualifier("agencyFlow")
+	private Flow agencyFlow;
 
-    @Autowired
-    @Qualifier("aquiferTypeFlow")
-    private Flow aquiferTypeFlow;
+	@Autowired
+	@Qualifier("altitudeDatumFlow")
+	private Flow altitudeDatumFlow;
 
-    @Autowired
-    @Qualifier("aqfrFlow")
-    private Flow aqfrFlow;
+	@Autowired
+	@Qualifier("altitudeMethodFlow")
+	private Flow altitudeMethodFlow;
 
-    @Autowired
-    @Qualifier("bodyPartFlow")
-    private Flow bodyPartFlow;
+	@Autowired
+	@Qualifier("aquiferTypeFlow")
+	private Flow aquiferTypeFlow;
 
-    @Autowired
-    @Qualifier("citMethFlow")
-    private Flow citMethFlow;
+	@Autowired
+	@Qualifier("aqfrFlow")
+	private Flow aqfrFlow;
 
-    @Autowired
-    @Qualifier("countryFlow")
-    private Flow countryFlow;
+	@Autowired
+	@Qualifier("bodyPartFlow")
+	private Flow bodyPartFlow;
 
-    @Autowired
-    @Qualifier("countyFlow")
-    private Flow countyFlow;
+	@Autowired
+	@Qualifier("citMethFlow")
+	private Flow citMethFlow;
 
-    @Autowired
-    @Qualifier("fxdFlow")
-    private Flow fxdFlow;
+	@Autowired
+	@Qualifier("countryFlow")
+	private Flow countryFlow;
 
-    @Autowired
-    @Qualifier("hydCondCdFlow")
-    private Flow hydCondCdFlow;
+	@Autowired
+	@Qualifier("countyFlow")
+	private Flow countyFlow;
 
-    @Autowired
-    @Qualifier("hydEventCdFlow")
-    private Flow hydEventCdFlow;
+	@Autowired
+	@Qualifier("dataReliabilityFlow")
+	private Flow dataReliabilityFlow;
 
-    @Autowired
-    @Qualifier("latLongDatumFlow")
-    private Flow latLongDatumFlow;
+	@Autowired
+	@Qualifier("fxdFlow")
+	private Flow fxdFlow;
 
-    @Autowired
-    @Qualifier("latLongMethodFlow")
-    private Flow latLongMethodFlow;
+	@Autowired
+	@Qualifier("hucFlow")
+	private Flow hucFlow;
 
-    @Autowired
-    @Qualifier("methFlow")
-    private Flow methFlow;
+	@Autowired
+	@Qualifier("hydCondCdFlow")
+	private Flow hydCondCdFlow;
 
-    @Autowired
-    @Qualifier("methWithCitFlow")
-    private Flow methWithCitFlow;
+	@Autowired
+	@Qualifier("hydEventCdFlow")
+	private Flow hydEventCdFlow;
 
-    @Autowired
-    @Qualifier("natAqfrFlow")
-    private Flow natAqfrFlow;
+	@Autowired
+	@Qualifier("latLongDatumFlow")
+	private Flow latLongDatumFlow;
 
-    @Autowired
-    @Qualifier("parmMethFlow")
-    private Flow parmMethFlow;
+	@Autowired
+	@Qualifier("latLongMethodFlow")
+	private Flow latLongMethodFlow;
 
-    @Autowired
-    @Qualifier("parmAliasFlow")
-    private Flow parmAliasFlow;
+	@Autowired
+	@Qualifier("methFlow")
+	private Flow methFlow;
 
-    @Autowired
-    @Qualifier("parmFlow")
-    private Flow parmFlow;
+	@Autowired
+	@Qualifier("methWithCitFlow")
+	private Flow methWithCitFlow;
 
-    @Autowired
-    @Qualifier("protoOrgFlow")
-    private Flow protoOrgFlow;
+	@Autowired
+	@Qualifier("natAqfrFlow")
+	private Flow natAqfrFlow;
 
-    @Autowired
-    @Qualifier("siteTpFlow")
-    private Flow siteTpFlow;
+	@Autowired
+	@Qualifier("parmMethFlow")
+	private Flow parmMethFlow;
 
-    @Autowired
-    @Qualifier("stateFlow")
-    private Flow stateFlow;
+	@Autowired
+	@Qualifier("parmAliasFlow")
+	private Flow parmAliasFlow;
 
-    @Autowired
-    @Qualifier("tuFlow")
-    private Flow tuFlow;
+	@Autowired
+	@Qualifier("parmFlow")
+	private Flow parmFlow;
 
-    @Autowired
-    @Qualifier("valQualCdFlow")
-    private Flow valQualCdFlow;
+	@Autowired
+	@Qualifier("protoOrgFlow")
+	private Flow protoOrgFlow;
 
-    @Bean
-    public Flow natdbFlow() {
-        return new FlowBuilder<SimpleFlow>("natdbFlow")
-                .start(altitudeMethodFlow)
-                .next(aquiferTypeFlow)
-                .next(aqfrFlow)
-                .next(bodyPartFlow)
-                .next(citMethFlow)
-                .next(countryFlow)
-                .next(countyFlow)
-                .next(fxdFlow)
-                .next(hydCondCdFlow)
-                .next(hydEventCdFlow)
-                .next(latLongDatumFlow)
-                .next(latLongMethodFlow)
-                .next(methFlow)
-                .next(methWithCitFlow)
-                .next(natAqfrFlow)
-                .next(parmMethFlow)
-                .next(parmAliasFlow)
-                // parmMethFlow has to occur before parmFlow
-                .next(parmFlow)
-                .next(protoOrgFlow)
-                .next(siteTpFlow)
-                .next(stateFlow)
-                .next(tuFlow)
-                .next(valQualCdFlow)
-                .build();
-    }
+	@Autowired
+	@Qualifier("siteTpFlow")
+	private Flow siteTpFlow;
+
+	@Autowired
+	@Qualifier("stateFlow")
+	private Flow stateFlow;
+
+	@Autowired
+	@Qualifier("topographicSettingFlow")
+	private Flow topographicSettingFlow;
+
+	@Autowired
+	@Qualifier("tuFlow")
+	private Flow tuFlow;
+
+	@Autowired
+	@Qualifier("valQualCdFlow")
+	private Flow valQualCdFlow;
+
+	@Bean
+	public Flow natdbFlow() {
+		return new FlowBuilder<SimpleFlow>("natdbFlow")
+				.start(agencyFlow)
+				.next(altitudeDatumFlow)
+				.next(altitudeMethodFlow)
+				.next(aquiferTypeFlow)
+				.next(aqfrFlow)
+				.next(bodyPartFlow)
+				.next(citMethFlow)
+				.next(countryFlow)
+				.next(countyFlow)
+				.next(dataReliabilityFlow)
+				.next(fxdFlow)
+				.next(hucFlow)
+				.next(hydCondCdFlow)
+				.next(hydEventCdFlow)
+				.next(latLongDatumFlow)
+				.next(latLongMethodFlow)
+				.next(methFlow)
+				.next(methWithCitFlow)
+				.next(natAqfrFlow)
+				.next(parmMethFlow)
+				.next(parmAliasFlow)
+				// parmMethFlow has to occur before parmFlow
+				.next(parmFlow)
+				.next(protoOrgFlow)
+				.next(siteTpFlow)
+				.next(stateFlow)
+				.next(topographicSettingFlow)
+				.next(tuFlow)
+				.next(valQualCdFlow)
+				.build();
+	}
 
 }
