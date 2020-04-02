@@ -13,7 +13,7 @@ You will need to create an application.yml file containing the following:
 ```yaml
 NWIS_DATABASE_ADDRESS: <url to database>
 NWIS_DATABASE_PORT: <port # of nwis database>
-NWIS_DTABASE_NAME: <wqp_db>
+NWIS_DATABASE_NAME: <wqp_db>
 NWIS_SCHEMA_OWNER_USERNAME: <nwis_ws_star>
 NWIS_SCHEMA_OWENR_PASSWORD: <changeMe>
 

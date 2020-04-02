@@ -1,0 +1,3 @@
+code,name,sort_order,description,valid_flag
+NAD27,NA Datum of 1927,1,North American Datum of 1927,true
+NAD83,NA Datum of 1983,2,North American Datum of 1983,true

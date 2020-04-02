@@ -1,0 +1,5 @@
+lev_age_cd,lev_age_srt_nu,lev_age_vld_fg,lev_age_nm,lev_age_ds
+S,1,Y,In Review,In Review
+R,2,Y,Approved,Approved
+Q,3,Y,Rejected,Rejected
+T,4,N,Transferred,Transferred

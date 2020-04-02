@@ -15,37 +15,39 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("!test & !it")
 public class JobCommandLineRunner implements CommandLineRunner {
 
-    private static final Logger LOG = LoggerFactory.getLogger(JobCommandLineRunner.class);
+	private static final Logger LOG = LoggerFactory.getLogger(JobCommandLineRunner.class);
 
-    @Autowired
-    private Job job;
-    @Autowired
-    private JobLauncher jobLauncher;
-    @Autowired
-    private JobExplorer jobExplorer;
+	@Autowired
+	private Job job;
+	@Autowired
+	private JobLauncher jobLauncher;
+	@Autowired
+	private JobExplorer jobExplorer;
 
-    @Override
-    public void run(String... args) throws Exception {
-        JobParameters parameters = new JobParametersBuilder(jobExplorer)
-                .addString("jobId", LocalDate.now().toString(), true)
-                .toJobParameters();
-        try {
-            JobExecution jobExecution = jobLauncher.run(job, parameters);
-            if (null == jobExecution
-                    || ExitStatus.UNKNOWN.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())
-                    || ExitStatus.FAILED.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())
-                    || ExitStatus.STOPPED.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())) {
-                throw new JobExecutionException("Job did not complete as planned.");
-            }
-            System.exit(0);
-        } catch (JobInstanceAlreadyCompleteException e) {
-            LOG.info(e.getLocalizedMessage());
-            System.exit(0);
-        }
-    }
+	@Override
+	public void run(String... args) throws Exception {
+		JobParameters parameters = new JobParametersBuilder(jobExplorer)
+				.addString("jobId", LocalDate.now().toString(), true)
+				.toJobParameters();
+		try {
+			JobExecution jobExecution = jobLauncher.run(job, parameters);
+			if (null == jobExecution
+					|| ExitStatus.UNKNOWN.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())
+					|| ExitStatus.FAILED.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())
+					|| ExitStatus.STOPPED.getExitCode().contentEquals(jobExecution.getExitStatus().getExitCode())) {
+				throw new JobExecutionException("Job did not complete as planned.");
+			}
+			System.exit(0);
+		} catch (JobInstanceAlreadyCompleteException e) {
+			LOG.info(e.getLocalizedMessage());
+			System.exit(0);
+		}
+	}
 }

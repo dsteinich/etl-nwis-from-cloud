@@ -1,0 +1,7 @@
+code,name,sort_order,description,valid_flag
+S,Survey,9,"Transit, theodolite, or other surveying method.",true
+U,Unknown,10,Unknown.,true
+W,GNSS1-Qual Lvl 1,11,GNSS1 - Level 1 Quality Survey Grade Global Navigation Satellite System,true
+X,GNSS2-Qual Lvl 2,12,GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System,true
+Y,GNSS3-Qual Lvl 3,13,GNSS3 - Level 3 Quality Survey Grade Global Navigation Satellite System,true
+Z,GNSS4-Qual Lvl 4,14,GNSS4 - Level 4 Quality Survey Grade Global Navigation Satellite System,true

@@ -1,0 +1,16 @@
+databaseChangeLog:
+
+  - changeSet:
+      author: drsteini
+      id: "create.table.gw_reflist"
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        - not:
+          - tableExists:
+              tableName: gw_reflist
+      changes:
+        - sqlFile:
+            path: gwReflist.sql
+            relativeToChangelogFile: true
+        - rollback: drop table if exists gw_reflist;

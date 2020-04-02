@@ -1,0 +1,16 @@
+code,name,sort_order,description,valid_flag
+A,Altimeter,1,Altimeter.,true
+D,DGPS,2,Differentially corrected Global Positioning System.,true
+F,SGPS,3,Survey-grade GPSF,true
+G,GPS,4,Global Positioning System.,false
+I,IfSAR,5,"Interferometric Synthetic Aperture Radar, airplane",true
+J,LiDAR,6,"Light Detection And Ranging, airplane",true
+L,Level,7,Level or other surveyed method.,true
+M,Map,8,Interpolated from topographic map.,true
+N,DEM,9,Interpolated from Digital Elevation Model,true
+R,Reported,10,Reported method of determination.,true
+U,Unknown,11,Unknown.,false
+W,GNSS1-Qual Lvl 1,12,GNSS1 - Level 1 Quality Survey Grade Global Navigation Satellite System,true
+X,GNSS2-Qual Lvl 2,13,GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System,true
+Y,GNSS3-Qual Lvl 3,14,GNSS3 - Level 3 Quality Survey Grade Global Navigation Satellite System,true
+Z,GNSS4-Qual Lvl 4,15,GNSS4 - Level 4 Quality Survey Grade Global Navigation Satellite System,true
