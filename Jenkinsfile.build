@@ -1,7 +1,5 @@
 @Library(value='iow-ecs-pipeline@2.0.0', changelog=false) _
 
-def p
-
 pipeline {
     agent {
         node {
