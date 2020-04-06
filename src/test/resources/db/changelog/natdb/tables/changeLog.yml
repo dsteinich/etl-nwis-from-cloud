@@ -1,0 +1,9 @@
+databaseChangeLog:
+
+  - include:
+      file: "gwReflist/changeLog.yml"
+      relativeToChangelogFile: true
+
+  - include:
+      file: "levAgeCd/changeLog.yml"
+      relativeToChangelogFile: true

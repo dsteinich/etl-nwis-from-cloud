@@ -13,7 +13,7 @@ You will need to create an application.yml file containing the following:
 ```yaml
 NWIS_DATABASE_ADDRESS: <url to database>
 NWIS_DATABASE_PORT: <port # of nwis database>
-NWIS_DTABASE_NAME: <wqp_db>
+NWIS_DATABASE_NAME: <wqp_db>
 NWIS_SCHEMA_OWNER_USERNAME: <nwis_ws_star>
 NWIS_SCHEMA_OWENR_PASSWORD: <changeMe>
 
@@ -34,3 +34,20 @@ You can then run the ETL with the following:
 ```% mvn spring-boot:run```
 
 The project is currently set up to run the job once a day.
+
+### Testing
+This project contains JUnit5 tests. Maven can be used to run them (in addition to the capabilities of your IDE).
+
+NOTE: This project requires the Oracle jdbc jar which is not available from Maven. You must obtain this jar from Oracle. The Dockerfile contains the Maven command to install it in your local repository.
+
+To run the unit tests of the application use:
+
+```shell
+mvn package
+```
+
+To additionally start up a Docker database and run the integration tests of the application use:
+
+```shell
+mvn verify -DTESTING_DATABASE_PORT=5437 -DTESTING_DATABASE_ADDRESS=localhost -DTESTING_DATABASE_NETWORK=wqpEtlCore
+```

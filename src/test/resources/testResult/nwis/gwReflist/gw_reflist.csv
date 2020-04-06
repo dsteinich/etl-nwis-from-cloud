@@ -1,0 +1,133 @@
+gw_ed_tbl_nm,gw_ref_cd,gw_ref_nm,gw_sort_nu,gw_ref_ds,gw_valid_fg
+saltac,999,Maximum+,2, Accuracy,Y
+saltdm,ASLOCAL,Am Samoa Local,15,Local American Samoa Datum,N
+saltdm,ASVD02,Am Samoa Datum,8,American Samoa Vertical Datum of 2002,Y
+saltdm,BARGECANAL,NY Barge Canal,12,New York State Barge Canal datum,Y
+saltdm,COE1912,COE Datum 1912,11,U.S. Corps of Engineers datum adjustment 1912,Y
+saltdm,GULOCAL,Guam Local,16,Local Guam Datum,N
+saltdm,GUVD04,Guam Datum,7,Guam Vertical Datum of 2004,Y
+saltdm,HILOCAL,Hawaii Local,14,Local Hawaiian Datum,N
+saltdm,IGLD,Gr Lakes Datum,10,International Great Lakes Datum,Y
+saltdm,LMSL,Local Mean SL,5,Local Mean Sea Level,Y
+saltdm,MLLW,Mean Lower Low,6,Mean Lower Low Water tidal datum,Y
+saltdm,NAVD88,V Datum of 1988,2,North American Vertical Datum of 1988,Y
+saltdm,NGVD29,V Datum of 1929,1,National Geodetic Vertical Datum of 1929,Y
+saltdm,NMVD03,N Marianas Datum,9,Northern Marianas Vertical Datum of 2003,Y
+saltdm,OLDAK,Old Alaska,3,Old Alaska (Mainland) and Aleutian Island Datum,Y
+saltdm,OLDPR,Old PR & VI,13,Old Puerto Rico and Virgin Island Datum,Y
+saltdm,PRVD02,Puerto Rico,4,Puerto Rico Vertical Datum of 2002,Y
+saltdm,TIDELOCAL,Tidal Local,17,Local Tidal Datum,N
+saltmt,A,Altimeter,1,Altimeter.,Y
+saltmt,D,DGPS,2,Differentially corrected Global Positioning System.,Y
+saltmt,F,SGPS,3,Survey-grade GPSF,Y
+saltmt,G,GPS,4,Global Positioning System.,N
+saltmt,I,IfSAR,5,"Interferometric Synthetic Aperture Radar, airplane",Y
+saltmt,J,LiDAR,6,"Light Detection And Ranging, airplane",Y
+saltmt,L,Level,7,Level or other surveyed method.,Y
+saltmt,M,Map,8,Interpolated from topographic map.,Y
+saltmt,N,DEM,9,Interpolated from Digital Elevation Model,Y
+saltmt,R,Reported,10,Reported method of determination.,Y
+saltmt,U,Unknown,11,Unknown.,N
+saltmt,W,GNSS1-Qual Lvl 1,12,GNSS1 - Level 1 Quality Survey Grade Global Navigation Satellite System,Y
+saltmt,X,GNSS2-Qual Lvl 2,13,GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System,Y
+saltmt,Y,GNSS3-Qual Lvl 3,14,GNSS3 - Level 3 Quality Survey Grade Global Navigation Satellite System,Y
+saltmt,Z,GNSS4-Qual Lvl 4,15,GNSS4 - Level 4 Quality Survey Grade Global Navigation Satellite System,Y
+saqtyp,C,Confined Single,3,Confined single aquifer,Y
+saqtyp,M,Conf Multiple,4,Confined multiple aquifers,Y
+saqtyp,N,Unconf Multiple,2,Unconfined multiple aquifer,Y
+saqtyp,U,Unconf Single,1,Unconfined single aquifer,Y
+saqtyp,X,Mixed Multiple,5,Mixed (confined and unconfined) multiple aquifers,Y
+sclass,C,Checked,1,Data have been checked by the reporting agency.,Y
+sclass,L,Poor location,2,Location not accurate.,Y
+sclass,M,Minimal,3,Minimal data.,Y
+sclass,U,Unchecked,4,Unchecked data.,Y
+scordm,NAD27,NA Datum of 1927,1,North American Datum of 1927,Y
+scordm,NAD83,NA Datum of 1983,2,North American Datum of 1983,Y
+scormt,S,Survey,9,"Transit, theodolite, or other surveying method.",Y
+scormt,U,Unknown,10,Unknown.,Y
+scormt,W,GNSS1-Qual Lvl 1,11,GNSS1 - Level 1 Quality Survey Grade Global Navigation Satellite System,Y
+scormt,X,GNSS2-Qual Lvl 2,12,GNSS2 - Level 2 Quality Survey Grade Global Navigation Satellite System,Y
+scormt,Y,GNSS3-Qual Lvl 3,13,GNSS3 - Level 3 Quality Survey Grade Global Navigation Satellite System,Y
+scormt,Z,GNSS4-Qual Lvl 4,14,GNSS4 - Level 4 Quality Survey Grade Global Navigation Satellite System,Y
+siwlmt,A,Airline,1,Airline measurement.,Y
+siwlmt,B,Analog,2,Analog or graphic recorder.,Y
+siwlmt,C,Calib. airline,3,Calibrated airline measurement.,Y
+siwlmt,D,Differential GPS,4,Differential Global Positioning System.,Y
+siwlmt,E,Estimated,5,Estimated.,N
+siwlmt,F,Transducer,6,Transducer.,Y
+siwlmt,G,Pressure-gage,7,Pressure-gage measurement.,Y
+siwlmt,H,Calib.Pres.Gage,8,Calibrated pressure-gage measurement.,Y
+siwlmt,L,Geophysical log,9,Interpreted from geophysical logs.,Y
+siwlmt,M,Manometer,10,Manometer measurement.,Y
+siwlmt,N,Nonrec. gage,11,Nonrecording gage.,Y
+siwlmt,O,Observed,12,Observed.,Y
+siwlmt,P,Acoustic Pulse,13,Acoustic Pulse measurement.,Y
+siwlmt,R,Reported,14,"Reported, method not known.",Y
+siwlmt,S,Steel tape,15,Steel-tape measurement.,Y
+siwlmt,T,Electric tape,16,Electric-tape measurement.,Y
+siwlmt,U,Unknown,17, Unknown method.,N
+siwlmt,V,Calib.Elec.Tape,18,Calibrated electric-tape measurement.,Y
+siwlmt,W,Calib.Elec.Cable,19,Calibrated electric cable.,Y
+siwlmt,X,Uncal.Elec.Cable,20,Uncalibrated electric cable.,Y
+siwlmt,Z,Other,21,Other.,Y
+siwlsc,A,Other Gov't,1,"Reported by another government agency (do not use \"A\" if reported by owner, use \"O\").",Y
+siwlsc,D,Driller's Log,2,From driller's log or report.,Y
+siwlsc,G,Geologist,3,Private geologist-consultant or university associate.,Y
+siwlsc,L,Geophysical Log,4,Depth interpreted from geophysical logs by personnel of source agency.,Y
+siwlsc,M,Memory,5,"Memory (owner, operator, driller).",Y
+siwlsc,O,Owner,6,Reported by owner of well.,Y
+siwlsc,R,Other Reported,7,"Reported by person other than the owner, driller, or another government agency.",Y
+siwlsc,S,Reporting Agency,8,Measured by personnel of reporting agency.,Y
+siwlsc,U,Unknown,9,Source is unknown.,N
+siwlsc,Z,Other,10,Other source (explain in remarks).,Y
+siwlst,A,Atmospheric Prs,1,Water level was affected by atmospheric pressure.,Y
+siwlst,B,Tide stage,2,Water level was affected by tide stage.,Y
+siwlst,C,Ice,3,Water level was affected by ice.,Y
+siwlst,D,Dry,4,Site was dry (no water level was recorded).,Y
+siwlst,E,Recent flowing,5,Site was flowing recently.,Y
+siwlst,F,Flowing,6,Site was flowing. Water level or head could not be measured without additional equipment.,Y
+siwlst,G,Nearby flowing,7,Nearby site that taps the same aquifer was flowing.,Y
+siwlst,H,Nrby recent flow,8,Nearby site that taps the same aquifer had been flowing recently.,Y
+siwlst,I,Inject'n at well,9,Recharge water was being injected into the aquifer at the site.,Y
+siwlst,J,Injection nearby,10,Nearby site that taps the same aquifer was injecting recharge water.,Y
+siwlst,K,Cascading water,11,Water was cascading down the inside of the well,Y
+siwlst,L,Brackish Saline,12,Water level was affected by brackish or saline water.,Y
+siwlst,M,Aq contact lost,13,Well was plugged and not in hydraulic contact with formation.,Y
+siwlst,N,Meas discont'd,14,Measurement was discontinued.,Y
+siwlst,O,Obstruction,15,Obstruction was encountered in the well (no water level was recorded).,Y
+siwlst,P,Pumping,16,Site was being pumped.,Y
+siwlst,R,Recently pumped,17,Site had been pumped recently.,Y
+siwlst,S,Nearby pumping,18,Nearby site that taps the same aquifer was being pumped.,Y
+siwlst,T,Nrby rcnt pumped,19,Nearby site that taps the same aquifer had been pumped recently.,Y
+siwlst,V,Foreign subst.,20,Foreign substance was present on the surface of the water.,Y
+siwlst,W,Destroyed,21,Well was destroyed (no water level was recorded).,Y
+siwlst,X,SW effects,22,Water level was affected by stage in nearby surface-water site.,Y
+siwlst,Z,Other,23,Other conditions existed that would affect the measured water level (explain in remarks).,Y
+stopo,A,Alluvial fan,1,Stream deposit of loose rock material where it issues from a narrow mountain valley upon a plain.,Y
+stopo,B,Playa,2,Undrained desert basin in which water accumulates and is quickly evaporated.,Y
+stopo,C,Stream channel,3,Bed in which a natural stream of water runs.,Y
+stopo,D,Local depression,4,An area that has no external surface drainage.,Y
+stopo,E,Dunes,5,"Mounds and ridges of windblown, or eolian sand.",Y
+stopo,F,Flat surface,6,"May be part of a larger feature, such as a plateau, plain, or pediment.",Y
+stopo,G,Flood plain,7,Smooth land surface adjacent to a river channel that is flooded when the river overflows its banks.,Y
+stopo,H,Hilltop,8,Upper part of a hill or ridge above a well-defined break in slope.,Y
+stopo,K,Sinkhole,9,Depression that results from the dissolving of soluble rocks and collapse into the solution cavity.,Y
+stopo,L,Lake or Swamp,10,"Inland lake, swamp, or marsh where the ground may be saturated or water stands above the land surface.",Y
+stopo,M,Mangrove swamp,11,Tropical or subtropical marine swamp characterized by abundant mangrove trees.,Y
+stopo,O,Offshore,12,Site along a coast or estuary that is continuously submerged.,Y
+stopo,P,Pediment,13,Plain of combined erosion and deposition that forms at the foot of a mountain range.,Y
+stopo,S,Hillside,14,"Sloping side of hill, the area between the hilltop and valley flat.",Y
+stopo,T,Alluvial terrace,15,"Generally a flat surface, usually parallel to but elevated above a stream valley or coast line.",Y
+stopo,U,Undulating,16,Topography is characteristic of areas which have many small depressions and low mounds.,Y
+stopo,V,Valley flat,17,Low flat area between the valley walls and bordering a stream channel.,Y
+stopo,W,Upland draw,18,Small natural drainageway,Y
+wlacc,0,Nearest Foot,1,Water level accuracy to nearest foot,Y
+wlacc,1,Nearest 1/10 Ft,2,Water level accuracy to nearest tenth of a foot,Y
+wlacc,2,Nearest 1/100 Ft,3,Water level accuracy to nearest hundredth of a foot,Y
+wlacc,9,Not nearest Ft,4,Water level accuracy not to nearest foot,Y
+wlacc,U,Unknown,5,Water level accuracy is unknown,Y
+wltdsg,D,Day,1,Date is accurate to the Day,Y
+wltdsg,h,Hour,4,Date is accurate to the Hour,Y
+wltdsg,M,Month,2,Date is accurate to the Month,Y
+wltdsg,m,Minute,5,Date is accurate to the Minute,Y
+wltdsg,Y,Year,3,Date is accurate to the Year,Y

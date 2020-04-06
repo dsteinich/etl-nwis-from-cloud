@@ -1,0 +1,16 @@
+databaseChangeLog:
+
+  - changeSet:
+      author: drsteini
+      id: "create.table.lev_age_cd"
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        - not:
+          - tableExists:
+              tableName: lev_age_cd
+      changes:
+        - sqlFile:
+            path: levAgeCd.sql
+            relativeToChangelogFile: true
+        - rollback: drop table if exists lev_age_cd;

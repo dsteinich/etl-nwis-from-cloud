@@ -16,18 +16,6 @@ public class NatdbConfig {
 	private Flow agencyFlow;
 
 	@Autowired
-	@Qualifier("altitudeDatumFlow")
-	private Flow altitudeDatumFlow;
-
-	@Autowired
-	@Qualifier("altitudeMethodFlow")
-	private Flow altitudeMethodFlow;
-
-	@Autowired
-	@Qualifier("aquiferTypeFlow")
-	private Flow aquiferTypeFlow;
-
-	@Autowired
 	@Qualifier("aqfrFlow")
 	private Flow aqfrFlow;
 
@@ -48,12 +36,12 @@ public class NatdbConfig {
 	private Flow countyFlow;
 
 	@Autowired
-	@Qualifier("dataReliabilityFlow")
-	private Flow dataReliabilityFlow;
-
-	@Autowired
 	@Qualifier("fxdFlow")
 	private Flow fxdFlow;
+
+	@Autowired
+	@Qualifier("gwReferenceCodeFlow")
+	private Flow gwReferenceCodeFlow;
 
 	@Autowired
 	@Qualifier("hucFlow")
@@ -66,14 +54,6 @@ public class NatdbConfig {
 	@Autowired
 	@Qualifier("hydEventCdFlow")
 	private Flow hydEventCdFlow;
-
-	@Autowired
-	@Qualifier("latLongDatumFlow")
-	private Flow latLongDatumFlow;
-
-	@Autowired
-	@Qualifier("latLongMethodFlow")
-	private Flow latLongMethodFlow;
 
 	@Autowired
 	@Qualifier("methFlow")
@@ -112,10 +92,6 @@ public class NatdbConfig {
 	private Flow stateFlow;
 
 	@Autowired
-	@Qualifier("topographicSettingFlow")
-	private Flow topographicSettingFlow;
-
-	@Autowired
 	@Qualifier("tuFlow")
 	private Flow tuFlow;
 
@@ -127,21 +103,16 @@ public class NatdbConfig {
 	public Flow natdbFlow() {
 		return new FlowBuilder<SimpleFlow>("natdbFlow")
 				.start(agencyFlow)
-				.next(altitudeDatumFlow)
-				.next(altitudeMethodFlow)
-				.next(aquiferTypeFlow)
 				.next(aqfrFlow)
 				.next(bodyPartFlow)
 				.next(citMethFlow)
 				.next(countryFlow)
 				.next(countyFlow)
-				.next(dataReliabilityFlow)
 				.next(fxdFlow)
+				.next(gwReferenceCodeFlow)
 				.next(hucFlow)
 				.next(hydCondCdFlow)
 				.next(hydEventCdFlow)
-				.next(latLongDatumFlow)
-				.next(latLongMethodFlow)
 				.next(methFlow)
 				.next(methWithCitFlow)
 				.next(natAqfrFlow)
@@ -152,7 +123,6 @@ public class NatdbConfig {
 				.next(protoOrgFlow)
 				.next(siteTpFlow)
 				.next(stateFlow)
-				.next(topographicSettingFlow)
 				.next(tuFlow)
 				.next(valQualCdFlow)
 				.build();
