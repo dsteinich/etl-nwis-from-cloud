@@ -18,8 +18,3 @@ spring:
     url: jdbc:oracle:thin:@//${NATDB_ADDRESS}:${NATDB_PORT}/${NATDB_NAME}
     username: ${NATDB_USERNAME}
     password: ${NATDB_PASSWORD}
-
-  liquibase:
-    parameters:
-      WQP_SCHEMA_NAME: ${WQP_SCHEMA_NAME}
-      ETL_OWNER_USERNAME: ${ETL_OWNER_USERNAME}

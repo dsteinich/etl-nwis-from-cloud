@@ -150,7 +150,7 @@
                     <containerNamePattern>%a</containerNamePattern>
                     <images>
                         <image>
-                            <name>usgswma/aqts_capture_db:ci</name>
+                            <name>usgswma/wqp_db:etl</name>
                             <alias>${TESTING_DATABASE_ADDRESS}</alias>
                             <run>
                                 <network>
