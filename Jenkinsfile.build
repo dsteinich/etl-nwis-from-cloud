@@ -34,32 +34,39 @@ pipeline {
                 sh "aws s3 cp s3://owi-common-resources/resources/InstallFiles/oracle-jdbc-driver/ojdbc6-11.2.0.2.0-1.jar ${WORKSPACE}/oracle/ojdbc6-11.2.0.2.0-1.jar"
             }
         }
-        stage('build docker image') {
+        stage('pull scripts') {
             steps {
                 script {
-                    pipelineUtils.setUpPythonVirtualEnv()
-                    pipelineUtils.pipInstall('--only-binary=bumpversion bumpversion==0.5.3 requests')
-                    dockerPipeline.buildDockerArtifact(p.artifactoryPath, p.gitlabPath, p.dockerImageName, './')
+                    pipelineUtils.pullEcsScripts()
                 }
             }
         }
-        stage('publish docker image') {
-        	steps {
-        		script {
-        			dockerPipeline.publishDockerImages(p.artifactoryPath, p.gitlabPath)
-        			dockerPipeline.deleteDockerImages(p.artifactoryPath, 10, p.dockerImageName)
-        		}
-        	}
+        stage('create virtualenv') {
+            steps {
+                script {
+                    pipelineUtils.setUpPythonVirtualEnv()
+                    pipelineUtils.pipInstall('--only-binary=bumpversion bumpversion==0.5.3 requests boto3 pyyaml chevron')
+                }
+            }
+        }
+        stage('build docker image') {
+            steps {
+                script {
+                    version = pipelineUtils.bumpVersion(params.BUILD_TYPE)
+                    buildConfigs = p['docker_build'] ?: [p]
+                    dockerPipeline.buildPublishAndCleanUpDockerImages(buildConfigs, version)
+                }
+            }
         }
         stage('push to git') {
-        	steps {
-        		script {
-        			if ("${params.BUILD_TYPE}" == "releases") {
-                		pipelineUtils.bumpVersion()
-        			}
-        			pipelineUtils.pushToGitRepo(p.gitRepoUrl, p.gitRepoCredentialsId)
-        		}
-        	}
+            steps {
+                script {
+                    if ("${params.BUILD_TYPE}" == "releases") {
+                        pipelineUtils.incrementToNextDevelopmentVersion()
+                        pipelineUtils.pushToGitRepo(p.gitRepoUrl, p.gitRepoCredentialsId)
+                    }
+                }
+            }
         }
     }
 }
