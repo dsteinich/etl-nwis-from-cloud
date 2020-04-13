@@ -6,7 +6,7 @@ public class BasicLookup {
 	public static final String ALTITUDE_METHOD = "altitude_method";
 	public static final String AQUIFER_TYPE = "aquifer_type";
 	public static final String DATA_RELIABILITY = "data_reliability";
-	public static final String GW_LEVEL_APPROVAL_STATUS = "gw_level_approval_status";
+	public static final String GW_LEVEL_ACCURACY = "gw_level_accuracy";
 	public static final String GW_LEVEL_DATE_TIME_ACCURACY = "gw_level_date_time_accuracy";
 	public static final String GW_LEVEL_METHOD = "gw_level_method";
 	public static final String GW_LEVEL_SITE_STATUS = "gw_level_site_status";

@@ -1,4 +1,4 @@
-package gov.acwi.wqp.etl.natdb.gw.levelApprovalStatus;
+package gov.acwi.wqp.etl.natdb.gw.levelAccuracy;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -18,50 +18,50 @@ import gov.acwi.wqp.etl.natdb.gw.BasicLookupProcessor;
 import gov.acwi.wqp.etl.natdb.gw.GwReflist;
 
 @Configuration
-public class GwLevelApprovalStatusTransformation {
+public class GwLevelAccuracyTransformation {
 
 	@Autowired
 	public StepBuilderFactory stepBuilderFactory;
 
 	@Autowired
-	@Qualifier("deleteGwLevelApprovalStatus")
-	private Tasklet deleteGwLevelApprovalStatus;
+	@Qualifier("deleteGwLevelAccuracy")
+	private Tasklet deleteGwLevelAccuracy;
 
 	@Autowired
-	@Qualifier("gwReflistGwLevelApprovalStatusReader")
-	private JdbcCursorItemReader<GwReflist> gwReflistGwLevelApprovalStatusReader;
+	@Qualifier("gwReflistGwLevelAccuracyReader")
+	private JdbcCursorItemReader<GwReflist> gwReflistGwLevelAccuracyReader;
 
 	@Autowired
-	@Qualifier("gwLevelApprovalStatusProcessor")
-	private BasicLookupProcessor gwLevelApprovalStatusProcessor;
+	@Qualifier("gwLevelAccuracyProcessor")
+	private BasicLookupProcessor gwLevelAccuracyProcessor;
 
 	@Autowired
-	@Qualifier("gwLevelApprovalStatusWriter")
-	private JdbcBatchItemWriter<BasicLookup> gwLevelApprovalStatusWriter;
+	@Qualifier("gwLevelAccuracyWriter")
+	private JdbcBatchItemWriter<BasicLookup> gwLevelAccuracyWriter;
 
 	@Bean
-	public Step deleteGwLevelApprovalStatusStep() {
-		return stepBuilderFactory.get("deleteGwLevelApprovalStatusStep")
-				.tasklet(deleteGwLevelApprovalStatus)
+	public Step deleteGwLevelAccuracyStep() {
+		return stepBuilderFactory.get("deleteGwLevelAccuracyStep")
+				.tasklet(deleteGwLevelAccuracy)
 				.build();
 	}
 
 	@Bean
-	public Step transformGwLevelApprovalStatusStep() {
+	public Step transformGwLevelAccuracyStep() {
 		return stepBuilderFactory
-				.get("transformGwLevelApprovalStatusStep")
+				.get("transformGwLevelAccuracyStep")
 				.<GwReflist, BasicLookup>chunk(1000)
-				.reader(gwReflistGwLevelApprovalStatusReader)
-				.processor(gwLevelApprovalStatusProcessor)
-				.writer(gwLevelApprovalStatusWriter)
+				.reader(gwReflistGwLevelAccuracyReader)
+				.processor(gwLevelAccuracyProcessor)
+				.writer(gwLevelAccuracyWriter)
 				.build();
 	}
 
 	@Bean
-	public Flow gwLevelApprovalStatusFlow() {
-		return new FlowBuilder<SimpleFlow>("gwLevelApprovalStatusFlow")
-				.start(deleteGwLevelApprovalStatusStep())
-				.next(transformGwLevelApprovalStatusStep())
+	public Flow gwLevelAccuracyFlow() {
+		return new FlowBuilder<SimpleFlow>("gwLevelAccuracyFlow")
+				.start(deleteGwLevelAccuracyStep())
+				.next(transformGwLevelAccuracyStep())
 				.build();
 	}
 }

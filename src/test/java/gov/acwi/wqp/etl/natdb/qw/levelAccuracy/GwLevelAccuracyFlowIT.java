@@ -1,4 +1,4 @@
-package gov.acwi.wqp.etl.natdb.gw.levelApprovalStatus;
+package gov.acwi.wqp.etl.natdb.qw.levelAccuracy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -17,25 +17,25 @@ import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
 
 import gov.acwi.wqp.etl.natdb.BaseFlowIT;
 
-public class GwLevelApprovalStatusFlowIT extends BaseFlowIT {
+public class GwLevelAccuracyFlowIT extends BaseFlowIT {
 
 	@Autowired
-	@Qualifier("gwLevelApprovalStatusFlow")
-	private Flow gwLevelApprovalStatusFlow;
+	@Qualifier("gwLevelAccuracyFlow")
+	private Flow gwLevelAccuracyFlow;
 
 	@Test
 	@DatabaseSetup(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testData/nwis/gwLevelApprovalStatus/"
+			value="classpath:/testData/nwis/gwLevelAccuracy/"
 			)
 	@ExpectedDatabase(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testResult/nwis/emptyGwLevelApprovalStatus.xml",
+			value="classpath:/testResult/nwis/emptyGwLevelAccuracy.xml",
 			assertionMode=DatabaseAssertionMode.NON_STRICT_UNORDERED
 			)
-	public void deleteGwLevelApprovalStatusStepTest() {
+	public void deleteGwLevelAccuracyStepTest() {
 		try {
-			JobExecution jobExecution = jobLauncherTestUtils.launchStep("deleteGwLevelApprovalStatusStep", testJobParameters);
+			JobExecution jobExecution = jobLauncherTestUtils.launchStep("deleteGwLevelAccuracyStep", testJobParameters);
 			assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,21 +45,21 @@ public class GwLevelApprovalStatusFlowIT extends BaseFlowIT {
 
 	@Test
 	@DatabaseSetup(
-			connection=CONNECTION_NATDB,
-			value="classpath:/testData/natdb/"
+			connection=CONNECTION_NWIS,
+			value="classpath:/testResult/nwis/gwReflist/"
 			)
 	@DatabaseSetup(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testResult/nwis/emptyGwLevelApprovalStatus.xml"
+			value="classpath:/testResult/nwis/emptyGwLevelAccuracy.xml"
 			)
 	@ExpectedDatabase(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testResult/nwis/gwLevelApprovalStatus/",
+			value="classpath:/testResult/nwis/gwLevelAccuracy/",
 			assertionMode=DatabaseAssertionMode.NON_STRICT_UNORDERED
 			)
-	public void transformGwLevelApprovalStatusStepTest() {
+	public void transformGwLevelAccuracyStepTest() {
 		try {
-			JobExecution jobExecution = jobLauncherTestUtils.launchStep("transformGwLevelApprovalStatusStep", testJobParameters);
+			JobExecution jobExecution = jobLauncherTestUtils.launchStep("transformGwLevelAccuracyStep", testJobParameters);
 			assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,24 +69,24 @@ public class GwLevelApprovalStatusFlowIT extends BaseFlowIT {
 
 	@Test
 	@DatabaseSetup(
-			connection=CONNECTION_NATDB,
-			value="classpath:/testData/natdb/"
+			connection=CONNECTION_NWIS,
+			value="classpath:/testResult/nwis/gwReflist/"
 			)
 	@DatabaseSetup(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testData/nwis/gwLevelApprovalStatus/"
+			value="classpath:/testData/nwis/gwLevelAccuracy/"
 			)
 	@ExpectedDatabase(
 			connection=CONNECTION_NWIS,
-			value="classpath:/testResult/nwis/gwLevelApprovalStatus/",
+			value="classpath:/testResult/nwis/gwLevelAccuracy/",
 			assertionMode=DatabaseAssertionMode.NON_STRICT_UNORDERED
 			)
-	public void gwLevelApprovalStatusFlowTest() {
-		Job gwLevelApprovalStatusFlowTest = jobBuilderFactory.get("gwLevelApprovalStatusFlowTest")
-					.start(gwLevelApprovalStatusFlow)
+	public void gwLevelAccuracyFlowTest() {
+		Job gwLevelAccuracyFlowTest = jobBuilderFactory.get("gwLevelAccuracyFlowTest")
+					.start(gwLevelAccuracyFlow)
 					.build()
 					.build();
-		jobLauncherTestUtils.setJob(gwLevelApprovalStatusFlowTest);
+		jobLauncherTestUtils.setJob(gwLevelAccuracyFlowTest);
 		try {
 			JobExecution jobExecution = jobLauncherTestUtils.launchJob(testJobParameters);
 			assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
