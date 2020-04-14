@@ -6,7 +6,7 @@ public class GwReflist {
 	public static final String ALTITUDE_METHOD = "saltmt";
 	public static final String AQUIFER_TYPE = "saqtyp";
 	public static final String DATA_RELIABILITY = "sclass";
-	public static final String GW_LEVEL_APPROVAL_STATUS = "siwlst";
+	public static final String GW_LEVEL_ACCURACY = "wlacc";
 	public static final String GW_LEVEL_DATE_TIME_ACCURACY = "wltdsg";
 	public static final String GW_LEVEL_METHOD = "siwlmt";
 	public static final String GW_LEVEL_SITE_STATUS = "siwlst";

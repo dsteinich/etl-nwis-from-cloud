@@ -36,8 +36,8 @@ public class GwReferenceCode {
 	private Flow dataReliabilityFlow;
 
 	@Autowired
-	@Qualifier("gwLevelApprovalStatusFlow")
-	private Flow gwLevelApprovalStatusFlow;
+	@Qualifier("gwLevelAccuracyFlow")
+	private Flow gwLevelAccuracyFlow;
 
 	@Autowired
 	@Qualifier("gwLevelDateTimeAccuracyFlow")
@@ -75,7 +75,7 @@ public class GwReferenceCode {
 				.next(altitudeMethodFlow)
 				.next(aquiferTypeFlow)
 				.next(dataReliabilityFlow)
-				.next(gwLevelApprovalStatusFlow)
+				.next(gwLevelAccuracyFlow)
 				.next(gwLevelDateTimeAccuracyFlow)
 				.next(gwLevelMethodFlow)
 				.next(gwLevelSiteStatusFlow)

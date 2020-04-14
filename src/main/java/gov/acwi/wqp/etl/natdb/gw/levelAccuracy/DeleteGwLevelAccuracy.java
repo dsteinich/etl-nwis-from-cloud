@@ -1,4 +1,4 @@
-package gov.acwi.wqp.etl.natdb.gw.levelApprovalStatus;
+package gov.acwi.wqp.etl.natdb.gw.levelAccuracy;
 
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,11 @@ import gov.acwi.wqp.etl.natdb.gw.BasicLookup;
 
 @Component
 @StepScope
-public class DeleteGwLevelApprovalStatus extends BaseTruncateNwisTable {
+public class DeleteGwLevelAccuracy extends BaseTruncateNwisTable {
 
 	@Autowired
-	public DeleteGwLevelApprovalStatus(JdbcTemplate jdbcTemplate) {
-		super(jdbcTemplate, BasicLookup.GW_LEVEL_APPROVAL_STATUS);
+	public DeleteGwLevelAccuracy(JdbcTemplate jdbcTemplate) {
+		super(jdbcTemplate, BasicLookup.GW_LEVEL_ACCURACY);
 	}
 
 }

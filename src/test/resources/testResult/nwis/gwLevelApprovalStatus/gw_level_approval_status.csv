@@ -1,5 +1,0 @@
-code,name,sort_order,description,valid_flag
-S,In Review,1,In Review,true
-R,Approved,2,Approved,true
-Q,Rejected,3,Rejected,true
-T,Transferred,4,Transferred,false

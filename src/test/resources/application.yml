@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active:
+    - it
+  batch:
+    job:
+      enabled: false
+    initialize-schema: always
+
+  datasource-nwis:
+    url: jdbc:postgresql://${NWIS_DATABASE_ADDRESS}:${NWIS_DATABASE_PORT}/${NWIS_DATABASE_NAME}
+    username: ${NWIS_SCHEMA_OWNER_USERNAME}
+    password: ${NWIS_SCHEMA_OWNER_PASSWORD}
+    hikari:
+      maximumPoolSize: 10
+    initialization-mode: always
+
+  datasource-nwqdatachecks:
+    url: jdbc:h2:mem:dbtest
+    username: ${NATDB_USERNAME}
+    password: ${NATDB_PASSWORD}
+
+  datasource-natdb:
+    url: jdbc:h2:mem:dbtest
+    username: ${NATDB_USERNAME}
+    password: ${NATDB_PASSWORD}
+    liquibase:
+      change-log: db/changelog/natdb/changeLog.yml
+      liquibaseSchema: PUBLIC
